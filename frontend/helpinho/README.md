@@ -1,27 +1,20 @@
-# Helpinho
+O projeto Helpinho é uma plataforma onde usuários podem criar seus helpinhos a hora que quiserem. O desenvolvimento envolveu a criação de componentes responsivos, integração com APIs para o controle de rotas e a implementação de funcionalidades para uma experiência de usuário eficiente.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+Principais Funcionalidades
+Interface de Usuário:
 
-## Development server
+Página de Login: Autenticação de usuários com validação de credenciais.
+Página de Registro: Criação de um novo usuário.
+Helpinhos: Visualizar todos os helpinhos criados por outros usuários.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Conexão com APIs externas para obter e enviar dados do usuário ou helpinhos já criados.
+Implementação de chamadas assíncronas utilizando serviços Angular.
+Gerenciamento de Estado:
 
-## Code scaffolding
+Utilização de serviços Angular para gerenciar o estado da aplicação e comunicação entre componentes.
+Tecnologias Utilizadas
+Angular: Framework para construção da aplicação.
+tailwind: Framework de CSS para design responsivo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Conclusão
+Esta documentação fornece os passos básicos para iniciar um projeto Angular e uma visão geral do desenvolvimento do projeto Helpinho. Para mais detalhes sobre a implementação específica e personalizações, consulte a documentação adicional ou o código-fonte do projeto.
