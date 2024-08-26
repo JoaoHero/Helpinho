@@ -1,20 +1,56 @@
-O projeto Helpinho é uma plataforma onde usuários podem criar seus helpinhos a hora que quiserem. O desenvolvimento envolveu a criação de componentes responsivos, integração com APIs para o controle de rotas e a implementação de funcionalidades para uma experiência de usuário eficiente.
+# Helpinho
 
-Principais Funcionalidades
-Interface de Usuário:
+Foi criado uma plataforma totalmente funcional e responsiva, desenvolvido para um desafio de vaga, mas que serviu para aprimorar meus conhecimentos de frontEnd e backend, utilizando a arquitetura cliente-servidor. Aplicação web construída com Angular, que atua como o frontend do projeto. Ela oferece uma interface amigável e intuitiva para os usuários interagirem com os recursos fornecidos pela API do backend. O backend, por sua vez, é responsável por gerenciar os dados e a lógica de negócios por trás da aplicação.
 
-Página de Login: Autenticação de usuários com validação de credenciais.
-Página de Registro: Criação de um novo usuário.
-Helpinhos: Visualizar todos os helpinhos criados por outros usuários.
+## Repositórios Relacionados
+* Frontend (Este Repositório): Contém o código fonte do frontend desenvolvido em Angular. Este repositório é onde a interface do usuário e a experiência do cliente são criadas e aprimoradas.
 
-Conexão com APIs externas para obter e enviar dados do usuário ou helpinhos já criados.
-Implementação de chamadas assíncronas utilizando serviços Angular.
-Gerenciamento de Estado:
+* Backend (Repositório Separado): Contém a implementação da API do backend, que fornece os serviços e funcionalidades necessárias para o frontend. Ele lida com a lógica de negócios, o acesso aos dados e a comunicação com o banco de dados. Link: 
 
-Utilização de serviços Angular para gerenciar o estado da aplicação e comunicação entre componentes.
-Tecnologias Utilizadas
-Angular: Framework para construção da aplicação.
-tailwind: Framework de CSS para design responsivo.
+## Seções
 
-Conclusão
-Esta documentação fornece os passos básicos para iniciar um projeto Angular e uma visão geral do desenvolvimento do projeto Helpinho. Para mais detalhes sobre a implementação específica e personalizações, consulte a documentação adicional ou o código-fonte do projeto.
+* Home: Página inicial do site, contendo uma validação de estado do usuário, logado ou deslogado. Oferece informações da página e contem uma lista de todos os helpinhos criados.
+
+* Login: Página para o usuário entrar em sua conta
+* Register: Página para o usuário se cadastrar na plataforma
+* Search: Página contento todos os helpinhos criados pelos demais usuário e contém um simples filtro de busca
+* CreateHelpinho: Seção para criar os helpinhos
+* Donate: Para contribuir com algum valor em dinheiro para o usuário
+
+## Funcionalidades
+
+* Criar: É possível criar um helpinho, com título, descrição, categoria e valor esperado .
+* Donate: É possível realizar transações a helpinhos criados de outros usuários.
+
+## Tecnologias utilizadas
+
+* Angular
+* Tailwind
+* Javascript
+* Serverless
+* JWT
+* Figma
+
+## Como executar o projeto?
+
+Clone o repositório do projeto:
+
+```bash
+git clone https://github.com/JoaoHero/Helpinho.git
+
+Navegue até o diretório do projeto:
+cd frontEnd
+cd helpinho
+
+Instale as dependências do projeto:
+npm install
+
+Inicie o servidor de desenvolvimento:
+npm run start
+
+Abra seu navegador e acesse http://localhost:4200 para visualizar o projeto em execução.
+```
+
+## Autor
+
+* João Ramos
