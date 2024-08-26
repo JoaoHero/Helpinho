@@ -1,0 +1,69 @@
+<main class="w-full h-[100vh]">
+    <div class="max-w-[1440px] h-full mx-auto flex justify-center items-center flex-wrap gap-[4rem] lg:gap-0">
+        <div class="w-full lg:w-[50%] flex flex-col items-center justify-center lg:block">
+            <div class="p-0 lg:p-[3rem] flex">
+                <a [routerLink]="['/']"><img class="w-[9rem] h-[2.75rem]" src="/assets/logo.svg" alt="Imagem contendo a logo do Helpinho para dispositivos móveis"></a>
+            </div>
+    
+            <div class="w-full mt-[1rem] flex flex-col items-center justify-center">
+                <div class="lg:w-[25rem] flex flex-col items-center justify-center border-black">
+                    <h2 class="font-sans text-[1.8rem] text-[#3D3D3D] font-bold">Bem vindo de volta!</h2>
+                    <p class="mt-4 font-sans text-base text-[#3D3D3D] text-justify">Entre e ajude os helpinho de hoje</p>
+    
+                    <form class="mt-[3rem] flex flex-col gap-4 items-center" [formGroup]="formulario" (ngSubmit)="onSubmitReactiveForm()">
+                        <div class="flex flex-col gap-2 w-[18rem] lg:w-full">
+                            <label for="" class="text-sm text-[#4F4F4F] font-bold">Email</label>
+                            <input type="email" formControlName="email" placeholder="Seu melhor email" required class="pl-[1rem] lg:w-[25rem] h-[2.75rem] border border-[#B0B0B0] rounded-lg">
+                            <small *ngIf="formulario.get('email')?.touched && formulario.get('email')?.hasError('required')" class="text-[red] font-sans font-bold">O email é obrigatório.</small>
+                            <small *ngIf="formulario.get('email')?.touched && formulario.get('email')?.hasError('email')" class="text-[red] font-sans font-bold">Por favor, insira um email válido.</small>
+                        </div>
+    
+                        <div class="flex flex-col gap-2 w-[18rem] lg:w-full">
+                            <label for="" class="text-sm text-[#4F4F4F] font-bold">Senha</label>
+                            <input type="password" formControlName="password" placeholder="••••••••" required class="pl-[1rem] lg:w-[25rem] h-[2.75rem] border border-[#B0B0B0] rounded-lg">
+                            <small *ngIf="formulario.get('password')?.touched && formulario.get('password')?.hasError('required')" class="text-[red] font-sans font-bold">A senha é obrigatória.</small>
+                        </div>
+    
+                        <div class="flex items-center justify-between w-full">
+                            <div class="flex gap-2">
+                                <input type="checkbox" formControlName="rememberMe">
+                                <p class="text-sm text-[#4F4F4F] font-sans font-bold">Lembrar conta</p>
+                            </div>
+    
+                            <a class="text-sm text-[#CE024C] font-sans font-bold">Esqueceu senha?</a>
+                        </div>
+    
+                        <div class="flex flex-col gap-4 items-center">
+                            <button class="w-[18rem] lg:w-[25rem] h-[2.75rem] bg-[#F40B59] rounded-lg text-[#fff] font-bold" [disabled]="isLoading">{{ buttonText }}</button>
+                        </div>
+                    </form>
+    
+                    <div class="relative mt-4">
+                        <button class="w-[18rem] lg:w-[25rem] h-[2.75rem] border border-[#B0B0B0] bg-[#FFFF] rounded-lg text-[#4F4F4F] font-bold">Continuar com Google</button>
+                        <img class="absolute top-[50%] translate-y-[-50%] left-4 lg:left-[5rem]" src="/assets/google-icon.svg" alt="Icone da google, para realizar login integrado">
+                    </div>
+    
+                    <div class="mt-[2rem] flex gap-1">
+                        <p class="font-sans text-sm text-[#4F4F4F] font-bold">Ainda não faz conhece o helpinho?</p>
+    
+                        <a [routerLink]="['/register']" class="font-sans text-sm text-[#F40B59] font-bold">Registre-se grátis</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="hidden mt-[3rem] px-[3rem] lg:flex items-center justify-between">
+                <p>© Helpinho 2077</p>
+    
+                <div class="flex gap-1">
+                    <img src="/assets/mail-icon.svg" alt="Icone de e-mail">
+                    <p>help&#64;helpinho.com</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex w-[20rem] h-[20rem] mx-auto lg:h-[55rem] lg:w-[30rem] xl:w-[40rem] overflow-hidden rounded-[1.8rem] items-center justify-center">
+            <img class="lg:hidden" src="/assets/image-login-mobile.svg" alt="Imagem para mobile">
+            <img class="hidden lg:block" src="/assets/image-login.svg" alt="Imagem para desktop">
+        </div>
+    </div>
+</main>

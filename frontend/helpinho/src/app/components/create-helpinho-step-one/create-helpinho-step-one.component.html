@@ -1,0 +1,68 @@
+<div class="mt-[3rem] h-[40rem] p-4 w-full">
+    <div class="w-full h-full">
+        <div class="text-center md:text-start">
+            <h3 class="font-sans text-base text-[#3D3D3D] font-bold">Em que categoria se encaixa seu helpinho?</h3>
+            <p class="font-sans text-base  text-[#4F4F4F]">Escolha pelo menos uma das categorias abaixo que represente seu helpinho.</p>
+        </div>
+    
+        <!-- Categorias -->
+        <div class="w-full mt-4">
+            <form class="flex flex-wrap gap-4  items-center justify-center md:justify-normal">
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Games'], 'border': !isChecked['Games']}">
+                        <img src="/assets/categoryGamesIcon.svg" alt="">
+                        <input type="checkbox" value="Games" (change)="onCheckboxChange($event, 'Games')" [checked]="isChecked['Games']" class="opacity-0">
+                        <p>Games</p>
+                    </div>
+                </label>
+                
+    
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Saúde'], 'border': !isChecked['Saúde']}">
+                        <img src="/assets/categoryHeartIcon.svg" alt="">
+                        <input type="checkbox" value="Saúde" (change)="onCheckboxChange($event, 'Saúde')" [checked]="isChecked['Saúde']" class="opacity-0">
+                        <p>Saúde</p>
+                    </div>
+                </label>
+    
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Música'], 'border': !isChecked['Música']}">
+                        <img src="/assets/categoryMusicIcon.svg" alt="">
+                        <input type="checkbox" value="Música" (change)="onCheckboxChange($event, 'Música')" [checked]="isChecked['Música']" class="opacity-0">
+                        <p>Música</p>
+                    </div>
+                </label>
+    
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Reforma'], 'border': !isChecked['Reforma']}">
+                        <img src="/assets/categoryReformIcon.svg" alt="">
+                        <input type="checkbox" value="Reforma" (change)="onCheckboxChange($event, 'Reforma')" [checked]="isChecked['Reforma']" class="opacity-0">
+                        <p>Reforma</p>
+                    </div>
+                </label>
+    
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Emergência'], 'border': !isChecked['Emergência']}">
+                        <img src="/assets/categoryEmergencyIcon.svg" alt="">
+                        <input type="checkbox" value="Emergência" (change)="onCheckboxChange($event, 'Emergência')" [checked]="isChecked['Emergência']" class="opacity-0">
+                        <p>Emergência</p>
+                    </div>
+                </label>
+    
+                <label class="flex flex-col gap-2">
+                    <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                        [ngClass]="{'border-[#FF2E6B]': isChecked['Hospital'], 'border': !isChecked['Hospital']}">
+                        <img src="/assets/categoryHospitalIcon.svg" alt="">
+                        <input type="checkbox" value="Hospital" (change)="onCheckboxChange($event, 'Hospital')" [checked]="isChecked['Hospital']" class="opacity-0">
+                        <p>Hospital</p>
+                    </div>
+                </label>
+            </form>
+         </div>
+    </div>
+</div>

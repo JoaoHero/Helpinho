@@ -1,0 +1,63 @@
+<!-- Área de busca e filtro -->
+<div class="mt-[5rem] w-full flex items-center justify-center gap-[1rem] flex-wrap">
+    <!-- Campo de pesquisa -->
+    <div class="relative w-full lg:w-[55rem]">
+        <!-- Ícone de pesquisa -->
+        <img src="/assets/search-icon.svg" alt="Ícone de pesquisa" class="absolute left-0 top-[50%] translate-y-[-50%] p-[1rem]">
+        <!-- Campo de pesquisa -->
+        <input type="search" placeholder="Quem vamos ajudar hoje?" class="w-full h-16 border border-[#B0B0B0] rounded-lg pl-[3rem] text-[#6D6D6D] placeholder:text-[#6D6D6D]" (input)="onSearch($event)" />
+    </div>
+
+    <!-- Campo de seleção de categoria -->
+    <div class="relative w-full lg:w-[25rem]">
+        <!-- Ícone de seta -->
+        <img src="/assets/arrow-icon.svg" alt="Ícone de seta" class="absolute right-0 top-[50%] translate-y-[-50%] p-4">
+        <!-- Campo de seleção de categoria -->
+        <input type="text" placeholder="Escolha uma categoria" class="w-full h-16 border border-[#B0B0B0] rounded-lg pl-[1rem] text-[#6D6D6D] placeholder:text-[#6D6D6D]">
+    </div>
+</div>
+
+<!-- Lista de ajuda -->
+<div class="mt-[5rem] max-w-[1500px] mx-auto flex gap-[2rem] items-center justify-center flex-wrap">
+    <!-- Item de ajuda -->
+    <div class="w-[20rem] lg:w-[24rem] h-[30.5rem] rounded-3xl shadow-md shadow-gray-400/50 cursor-pointer" *ngFor="let helpinho of filteredHelpinhos">
+        <a [routerLink]="['/helpinho', helpinho.helpinhoId]">
+            <!-- Imagem do item de ajuda -->
+            <div class="lg:w-[24rem] h-[14rem] rounded-t-3xl overflow-hidden relative">
+                <img class="w-full h-full object-cover" src={{helpinho.image}} alt="Imagem do item de ajuda">
+    
+                <!-- Categoria do item de ajuda -->
+                <div class="absolute bottom-[1rem] right-[1rem] px-[1rem] bg-[#FFE2E7] rounded-3xl z-10 flex items-center justify-center">
+                    <p class="text-[#CE024C] font-bold">{{helpinho.category}}</p>
+                </div>
+            </div>
+    
+            <!-- Informações do usuário -->
+            <div class="pl-6 pt-4 gap-2 flex items-center justify-start">
+                <div>
+                    <!-- Ícone de avatar do usuário -->
+                    <img src="/assets/avatar.svg" alt="Ícone de avatar do usuário">
+                </div>
+    
+                <div class="flex flex-col">
+                    <p class="text-sm text-[#4F4F4F] font-bold">{{helpinho.userName}}</p>
+                    <p class="text-sm text-[#4F4F4F]">{{helpinho.userEmail}}</p>
+                </div>
+            </div>
+    
+            <!-- Título do item de ajuda -->
+            <h2 class="pl-6 mt-4 font-sans text-[#3D3D3D] text-2xl font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">{{helpinho.title}}</h2>
+    
+            <!-- Descrição do item de ajuda -->
+            <p class="pl-6 mt-[.5rem] font-sans text-[#5D5D5D] text-base truncate-2-lines">{{helpinho.description}}</p>
+    
+            <!-- Imagem de grupo de usuários -->
+            <img class="pl-6 mt-[1rem]" src="/assets/avatar-group.svg" alt="Imagens de usuários que utilizam o Helpinho">
+        </a>
+    </div>
+
+    <!-- Componente de carregamento -->
+    <div *ngIf="helpinhosLoading">
+        <app-helpinhos-loading></app-helpinhos-loading>
+    </div>
+</div>

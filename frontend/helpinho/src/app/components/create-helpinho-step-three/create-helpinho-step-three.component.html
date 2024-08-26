@@ -1,0 +1,73 @@
+<div class="mt-[3rem] h-[40rem] p-4 w-full">
+    <div class="w-full h-full">
+        <div class="text-center md:text-start">
+            <h3 class="font-sans text-base text-[#3D3D3D] font-bold">Em que categoria se encaixa seu helpinho?</h3>
+            <p class="font-sans text-base text-[#4F4F4F]">Escolha pelo menos uma das categorias abaixo que represente seu helpinho.</p>
+        </div>
+
+        <!-- Categorias -->
+        <div class="mt-[3rem] w-full">
+            <form class="flex flex-col flex-wrap gap-4 items-center justify-center md:justify-normal">
+                <div class="flex gap-4 flex-wrap justify-center">
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['100'], 'border': !isChecked['100']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 100">
+                            <input type="checkbox" value="100" (change)="onCheckboxChange($event, '100')" [checked]="isChecked['100']" class="opacity-0">
+                            <p>R$ 100</p>
+                        </div>
+                    </label>
+
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['1.000'], 'border': !isChecked['1.000']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 1.000">
+                            <input type="checkbox" value="1.000" (change)="onCheckboxChange($event, '1.000')" [checked]="isChecked['1.000']" class="opacity-0">
+                            <p>R$ 1.000</p>
+                        </div>
+                    </label>
+
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['5.000'], 'border': !isChecked['5.000']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 5.000">
+                            <input type="checkbox" value="5.000" (change)="onCheckboxChange($event, '5.000')" [checked]="isChecked['5.000']" class="opacity-0">
+                            <p>R$ 5.000</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="flex gap-4 flex-wrap">
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['10.000'], 'border': !isChecked['10.000']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 10.000">
+                            <input type="checkbox" value="10.000" (change)="onCheckboxChange($event, '10.000')" [checked]="isChecked['10.000']" class="opacity-0">
+                            <p>R$ 10.000</p>
+                        </div>
+                    </label>
+
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['20.000'], 'border': !isChecked['20.000']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 20.000">
+                            <input type="checkbox" value="20.000" (change)="onCheckboxChange($event, '20.000')" [checked]="isChecked['20.000']" class="opacity-0">
+                            <p>R$ 20.000</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="flex gap-4 flex-wrap">
+                    <label class="flex flex-col gap-2">
+                        <div class="w-[9rem] h-[6.8rem] flex flex-col justify-center items-center border-2 checkbox-container cursor-pointer"
+                            [ngClass]="{'border-[#FF2E6B]': isChecked['50.000'], 'border': !isChecked['50.000']}">
+                            <img src="/assets/categoryGamesIcon.svg" alt="Categoria R$ 50.000">
+                            <input type="checkbox" value="50.000" (change)="onCheckboxChange($event, '50.000')" [checked]="isChecked['50.000']" class="opacity-0">
+                            <p>R$ 50.000</p>
+                        </div>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

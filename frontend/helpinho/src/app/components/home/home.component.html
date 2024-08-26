@@ -1,0 +1,24 @@
+<div *ngIf="isAuthenticated; else guestTemplate" class="background-container">
+    <div class="w-full h-[750px] custom2:h-[700px] md:h-[500px] custom:h-[450px] lg:h-[550px] bg-background-home bg-cover bg-center absolute top-0 z-[-1]"></div>
+
+    <section class="mt-[5rem] lg:mt-[10rem]">
+        <app-home-user-apresentation></app-home-user-apresentation>
+    </section>
+</div>
+
+<ng-template #guestTemplate>
+    <div class="w-full h-[1000px] md:h-[700px] lg:h-[850px] bg-background-home bg-cover bg-center absolute top-0 z-[-1]"></div>
+
+    <section class="h-[920px] sm:h-[820px] md:h-[500px] lg:h-[690px]">
+        <app-home-apresentation></app-home-apresentation>
+    </section>
+</ng-template>
+
+<section class="px-[2rem]">
+    <app-flow></app-flow>
+</section>
+
+
+<section class="px-[2rem]">
+     <app-helpinho-list></app-helpinho-list>
+</section>

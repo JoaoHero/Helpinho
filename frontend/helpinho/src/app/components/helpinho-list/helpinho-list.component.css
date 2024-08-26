@@ -1,0 +1,7 @@
+/* No seu arquivo CSS */
+.truncate-2-lines {
+    @apply overflow-hidden text-ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }

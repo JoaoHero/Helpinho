@@ -1,0 +1,26 @@
+<main class="max-w-[1440px] mx-auto h-[100vh]">
+  <!-- ProgressBar -->
+  <div class="mt-4 w-full flex items-center justify-center">
+      <div>
+          <img [src]="'assets/step' + currentStep + '.svg'" alt="Barra de progresso">
+      </div>
+  </div>
+
+  <!-- Step Components -->
+  <section>
+      <ng-container [ngSwitch]="currentStep">
+          <app-create-helpinho-step-one *ngSwitchCase="1"></app-create-helpinho-step-one>
+          <app-create-helpinho-step-two *ngSwitchCase="2"></app-create-helpinho-step-two>
+          <app-create-helpinho-step-thre *ngSwitchCase="3"></app-create-helpinho-step-thre>
+          <app-create-helpinho-step-for *ngSwitchDefault></app-create-helpinho-step-for>
+      </ng-container>
+  </section>
+
+  <!-- Buttons -->
+  <div class="w-full flex gap-4 pr-14 lg:pr-0 justify-end">
+      <button *ngIf="currentStep === 1" class="w-[6.25rem] h-[2.3rem] bg-[#ffff] text-[#4F4F4F] border border-[#B0B0B0] font-bold rounded-md" (click)="previousStep()">Cancelar</button>
+      <button *ngIf="currentStep !== 1" class="w-[6.25rem] h-[2.3rem] bg-[#ffff] text-[#4F4F4F] border border-[#B0B0B0] font-bold rounded-md" (click)="previousStep()">Voltar</button>
+      <button *ngIf="currentStep === 4" (click)="saveAllData()" class="w-[6.25rem] h-[2.3rem] bg-[#F40B59] text-[#ffff] font-bold rounded-md">Finalizar</button>
+      <button *ngIf="currentStep !== 4" class="w-[6.25rem] h-[2.3rem] bg-[#F40B59] text-[#ffff] font-bold rounded-md" (click)="nextStep()">Continuar</button>
+  </div>
+</main>

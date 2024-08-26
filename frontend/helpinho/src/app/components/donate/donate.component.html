@@ -1,0 +1,135 @@
+<main class="p-2 max-w-[1440px] mx-auto flex justify-center">
+    <div class="mt-[3rem] mb-[5rem] lg:m-[10rem] w-full flex flex-col items-center justify-center rounded-md">
+        <!-- Métodos de pagamento -->
+        <div class="w-full lg:w-[50%] flex justify-center lg:justify-start gap-4">
+            <div class="w-[15rem] h-[5rem] px-4 flex justify-between items-center rounded-md border border-blue-500 shadow-md shadow-gray-400/50 cursor-pointer">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/cardCreditIcon.png" alt="Ícone cartão de crédito" />
+                    <p>Cartão</p>
+                </div>
+                <input type="radio" name="payment-method" checked class="rounded-full">
+            </div>
+
+            <!-- Adicionar mais formas de pagamento futuramente -->
+            <!-- 
+            <div class="w-[15rem] h-[5rem] px-4 flex justify-between items-center rounded-md border border-black shadow-md shadow-gray-400/50 cursor-pointer">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/pixIcon.png" alt="Ícone Pix" />
+                    <p>Pix</p>
+                </div>
+                <input type="radio" name="payment-method" class="rounded-full">
+            </div>
+            -->
+        </div>
+
+        <!-- Formulário -->
+        <div class="mt-4 w-full lg:w-[50%]">
+            <form class="w-full flex flex-col gap-4" [formGroup]="formulario" (ngSubmit)="onSubmitReactiveForm()">
+                <!-- Valor de helpcoins -->
+                <div class="w-full flex flex-col gap-2">
+                    <label for="helpcoins" class="pl-2">Valor de helpcoins a ser contribuído</label>
+                    <div class="bg-white border border-black rounded-md">
+                        <input 
+                            id="helpcoins" 
+                            type="text" 
+                            formControlName="donationAmount" 
+                            placeholder="R$" 
+                            class="w-full h-[3rem] rounded-md pl-2" 
+                        />
+                    </div>
+                    <div *ngIf="formulario.get('donationAmount')?.invalid && formulario.get('donationAmount')?.touched" class="text-red-500 text-sm pl-2">
+                        <small *ngIf="formulario.get('donationAmount')?.errors?.['required']">Campo obrigatório.</small>
+                        <small *ngIf="formulario.get('donationAmount')?.errors?.['pattern']">Valor inválido.</small>
+                    </div>
+                </div>
+
+                <!-- Número do Cartão -->
+                <div class="w-full flex flex-col gap-2">
+                    <label for="card-number" class="pl-2">Número do Cartão</label>
+                    <div class="relative flex bg-white border border-black rounded-md">
+                        <input 
+                            id="card-number" 
+                            type="text" 
+                            formControlName="cardNumber" 
+                            placeholder="1234 1234 1234 1234" 
+                            class="w-full h-[3rem] rounded-md pl-2" 
+                        />
+
+                        <!-- Icones com as bandeiras -->
+                        <div class="absolute flex w-8 top-[50%] translate-y-[-50%] right-[5rem]">
+                            <img src="/assets/visa.svg" alt="Visa">
+                            <img src="/assets/masterCard.svg" alt="MasterCard">
+                            <img src="/assets/paypal.svg" alt="PayPal">
+                        </div>
+                    </div>
+                    <div *ngIf="formulario.get('cardNumber')?.invalid && formulario.get('cardNumber')?.touched" class="text-red-500 text-sm pl-2">
+                        <small *ngIf="formulario.get('cardNumber')?.errors?.['required']">Campo obrigatório.</small>
+                        <small *ngIf="formulario.get('cardNumber')?.errors?.['pattern']">Número de cartão inválido.</small>
+                    </div>
+                </div>
+
+                <!-- Nome do Cartão -->
+                <div class="w-full flex flex-col gap-2">
+                    <label for="card-name" class="pl-2">Nome do Cartão</label>
+                    <div class="bg-white border border-black rounded-md">
+                        <input 
+                            id="card-name" 
+                            type="text" 
+                            formControlName="cardName" 
+                            placeholder="Nome que está no cartão" 
+                            class="w-full h-[3rem] rounded-md pl-2" 
+                        />
+                    </div>
+                    <div *ngIf="formulario.get('cardName')?.invalid && formulario.get('cardName')?.touched" class="text-red-500 text-sm pl-2">
+                        <small *ngIf="formulario.get('cardName')?.errors?.['required']">Campo obrigatório.</small>
+                    </div>
+                </div>
+
+                <!-- Expiração e CVC -->
+                <div class="flex flex-wrap gap-[3rem] items-center">
+                    <div class="flex flex-col gap-2">
+                        <label for="card-exp-month" class="pl-2">Expiração</label>
+                        <div class="bg-white rounded-md flex gap-2 items-center">
+                            <input 
+                                id="card-exp-month" 
+                                type="text" 
+                                formControlName="expireDate" 
+                                placeholder="MM/AA" 
+                                class="w-[5rem] h-[3rem] rounded-md pl-2 border border-black" 
+                            />
+                            <div *ngIf="formulario.get('expireDate')?.invalid && formulario.get('expireDate')?.touched" class="text-red-500 text-sm pl-2">
+                                <small *ngIf="formulario.get('expireDate')?.errors?.['required']">Campo obrigatório.</small>
+                                <small *ngIf="formulario.get('expireDate')?.errors?.['pattern']">Formato inválido (MM/AA).</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="card-cvc" class="pl-2">CVC</label>
+                        <div class="flex items-center bg-white rounded-md">
+                            <input 
+                                id="card-cvc" 
+                                type="text" 
+                                formControlName="cvcCard" 
+                                placeholder="CVC" 
+                                class="w-[10rem] h-[3rem] rounded-md pl-2 border border-black" 
+                            />
+                            <div *ngIf="formulario.get('cvcCard')?.invalid && formulario.get('cvcCard')?.touched" class="text-red-500 text-sm pl-2">
+                                <small *ngIf="formulario.get('cvcCard')?.errors?.['required']">Campo obrigatório.</small>
+                                <small *ngIf="formulario.get('cvcCard')?.errors?.['pattern']">CVC inválido.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão de envio -->
+                <button 
+                    type="submit" 
+                    class="mt-[3rem] w-full h-[3rem] bg-[#CE024C] text-white font-bold rounded-md"
+                >
+                    {{ isLoading ? 'Finalizando...' : 'Finalizar Pagamento' }}
+                </button>
+            </form>
+        </div>
+    </div>
+</main>

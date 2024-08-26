@@ -1,0 +1,79 @@
+<div class="max-w-[1440px] h-[36.5rem] mx-auto sm:mt-[5rem] flex flex-wrap">
+  <!-- Seção de Texto e Botão -->
+  <section class="w-full md:w-[50%] p-8 lg:p-0 relative overflow-x-hidden">
+      <img class="hidden lg:block" src="/assets/home-banner.png" alt="Imagem contendo um banner de aviso na pagina home">
+
+      <div class="block lg:hidden relative overflow-hidden w-[1200px]">
+          <div class="flex gap-6 whitespace-nowrap animate-scroll">
+            <!-- Elementos do carrossel -->
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Registro grátis
+              </p>
+            </div>
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Sem taxas
+              </p>
+            </div>
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Rápido e prático
+              </p>
+            </div>
+            <!-- Duplicação para efeito de rolagem contínua -->
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Registro grátis
+              </p>
+            </div>
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Sem taxas
+              </p>
+            </div>
+            <div class="carousel-item">
+              <p class="flex items-center justify-center gap-2 opacity-100 text-[#454545]">
+                <img src="/assets/icon.svg" alt="Icone do carrossel">Rápido e prático
+              </p>
+            </div>
+          </div>
+        </div>
+
+      <h1 class="p-0 lg:p-4 mt-[2rem] lg:mt-4 font-sans text-[2rem] lg:text-[3rem] text-[#454545]">
+          Faça a diferença com apenas 
+          <span class="font-sans text-[2rem] lg:text-[3rem] text-[#F40B59] font-bold">um Helpinho</span>
+      </h1>
+      
+      <div class="font-sans text-[1rem] lg:text-2xl text-[#454545] mt-4">
+          <p class="whitespace-pre-wrap lg:whitespace-normal">Os helpinho podem parecer pequenos, mas</p>
+          <p class="whitespace-pre-wrap lg:whitespace-normal">juntos fazem a <span class="text-[#F40B59] font-bold">diferença na vida de todos</span></p>
+      </div>
+      
+      <a [routerLink]="['/register']"><button class="mt-10 w-[11.6rem] h-[3.5rem] bg-[#F40B59] text-[#fff] rounded-3xl cursor-pointer">Registre-se grátis</button></a>
+  </section>
+
+  <!-- Seção de Imagens -->
+  <section class="w-full md:w-[50%] h-[10rem]">
+      <!-- Imagem e Vetores -->
+      <div class="flex gap-2 lg:gap-8 justify-end sm:justify-center relative">
+          <div class="relative">
+              <img class="w-[11.8rem] lg:w-[22rem]" src="/assets/home-principal-image-women.svg" alt="Imagem de uma mulher do lado de um homem na seção principal da home">
+              <img class="absolute bottom-[1rem] left-[-9rem] z-[-1]" src="/assets/Vector 4.svg" alt="Vetor">
+          </div>
+
+          <div class="relative">
+              <img class="w-[9rem] lg:w-[12rem] mt-[8rem]" src="/assets/home-principal-image-man.svg" alt="Imagem de um homem na seção principal da home">
+
+              <!-- Vetor desktop -->
+              <div class="hidden lg:block">
+                  <img class="absolute bottom-0 right-[7rem] lg:bottom-[5rem] lg:right-[10rem]" src="/assets/Vector 332.svg" alt="Vetor">
+              </div>
+              <!-- Vetor invertido para mobile -->
+              <div class="block lg:hidden">
+                  <img class="absolute bottom-[15rem] right-[7rem] z-0" src="/assets/vector-mobile.svg" alt="Vetor">
+              </div>
+          </div>
+      </div>
+  </section>
+</div>

@@ -1,0 +1,32 @@
+<div class="mt-[3rem] h-[40rem] p-4 w-full">
+    <div class="text-center md:text-start">
+        <h3 class="font-sans text-base text-[#3D3D3D] font-bold">Fale um pouco mais</h3>
+        <p class="font-sans text-base text-[#4F4F4F]">Escreva mais detalhes sobre seu helpinho, não economize nas palavras.</p>
+    </div>
+
+    <!-- Formulário -->
+    <div class="mt-4 w-full">
+        <form [formGroup]="form">
+            <div class="flex flex-col">
+                <label for="helpinhoTitle" class="font-sans text-base text-[#4F4F4F]">Título do Helpinho</label>
+                <input 
+                    type="text" 
+                    id="helpinhoTitle" 
+                    formControlName="title" 
+                    placeholder="Seu título aqui" 
+                    class="h-[2.7rem] pl-2 rounded-md border border-[#B0B0B0]"
+                />
+            </div>
+
+            <div class="mt-4 flex flex-col">
+                <label for="helpinhoDescription" class="font-sans text-base text-[#4F4F4F]">Descrição</label>
+                <textarea 
+                    id="helpinhoDescription" 
+                    formControlName="description" 
+                    placeholder="Escreva a descrição do seu helpinho, não economize nas palavras" 
+                    class="h-[15rem] lg:h-[18rem] rounded-md border border-[#B0B0B0] p-2"
+                ></textarea>
+            </div>
+        </form>
+    </div>
+</div>

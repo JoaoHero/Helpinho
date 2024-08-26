@@ -1,0 +1,17 @@
+<!-- app.component.html -->
+
+<!-- Header -->
+<header *ngIf="!['/login', '/register'].includes(router.url)">
+  <app-header></app-header>
+</header>
+
+<!-- Main Content -->
+<main>
+  <!-- Router Outlet for Routing -->
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer *ngIf="!['/login', '/register'].includes(router.url)">
+  <app-footer></app-footer>
+</footer>
