@@ -67,9 +67,10 @@ export class CreateHelpinhoComponent {
     const allData = {
       ...this.formDataService.getData('stepOne'),
       ...this.formDataService.getData('stepTwo'),
-      ...this.formDataService.getData('stepThre'),
+      ...this.formDataService.getData('stepThree'),
     };
 
+    console.log(allData)
     if(!allData.title || !allData.category || !allData.description || !allData.value) {
       return this.showError("Favor preencher todos os dados")
     }
